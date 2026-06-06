@@ -11,11 +11,31 @@ export class MoviesService {
     @InjectRepository(Movie)
     private readonly movieRepository: Repository<Movie>,
   ) {}
+
   async create(createMovieDto: CreateMovieDto) {
-  const movie = this.movieRepository.create(createMovieDto);
-  return await this.movieRepository.save(movie);
-}
-async findAll() {
-  return await this.movieRepository.find();
-}
+    const movie = this.movieRepository.create(createMovieDto);
+    return await this.movieRepository.save(movie);
+  }
+
+  async findAll() {
+    return await this.movieRepository.find();
+  }
+
+  async findOne(id: number) {
+    return await this.movieRepository.findOne({
+      where: { id },
+    });
+  }
+
+  async update(id: number, data: Partial<Movie>) {
+    await this.movieRepository.update(id, data);
+
+    return this.movieRepository.findOne({
+      where: { id },
+    });
+  }
+
+  async remove(id: number) {
+    return await this.movieRepository.delete(id);
+  }
 }
