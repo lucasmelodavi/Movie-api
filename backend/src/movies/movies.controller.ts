@@ -6,8 +6,10 @@ import {
   Delete,
   Param,
   Body,
+  Query,
 } from '@nestjs/common';
 
+import { CreateMovieDto } from './dto/create-movie.dto';
 import { MoviesService } from './movie.service';
 import { Movie } from './movie.entity';
 
@@ -16,18 +18,16 @@ export class MoviesController {
   constructor(private readonly moviesService: MoviesService) {}
 
   @Get()
-  async findAll(): Promise<Movie[]> {
-    return this.moviesService.findAll();
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.moviesService.findOne(Number(id));
+  async findAll(
+    @Query('title') title?: string,
+    @Query('genre') genre?: string,
+  ): Promise<Movie[]> {
+    return this.moviesService.findAll(title, genre);
   }
 
   @Post()
-  create(@Body() movie: Movie) {
-    return this.moviesService.create(movie);
+  create(@Body() createMovieDto: CreateMovieDto) {
+    return this.moviesService.create(createMovieDto);
   }
 
   @Put(':id')

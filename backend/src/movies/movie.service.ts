@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Repository, ILike } from 'typeorm';
 
 import { Movie } from './movie.entity';
 import { CreateMovieDto } from './dto/create-movie.dto';
@@ -17,8 +17,18 @@ export class MoviesService {
     return await this.movieRepository.save(movie);
   }
 
-  async findAll() {
-    return await this.movieRepository.find();
+  async findAll(title?: string, genre?: string) {
+    const where: any = {};
+
+    if (title) {
+      where.title = ILike(`%${title}%`);
+    }
+
+    if (genre) {
+      where.genre = ILike(`%${genre}%`);
+    }
+
+    return await this.movieRepository.find({ where });
   }
 
   async findOne(id: number) {
