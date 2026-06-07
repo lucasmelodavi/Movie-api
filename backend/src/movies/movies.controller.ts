@@ -25,6 +25,11 @@ export class MoviesController {
     return this.moviesService.findAll(title, genre);
   }
 
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.moviesService.findOne(Number(id));
+  }
+
   @Post()
   create(@Body() createMovieDto: CreateMovieDto) {
     return this.moviesService.create(createMovieDto);
