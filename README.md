@@ -2,6 +2,10 @@
 
 API REST para gerenciamento de filmes desenvolvida com NestJS, TypeScript, PostgreSQL e TypeORM.
 
+O projeto do teste técnico está localizado na pasta:
+
+backend/
+
 ## Tecnologias utilizadas
 
 * NestJS
@@ -23,7 +27,9 @@ API REST para gerenciamento de filmes desenvolvida com NestJS, TypeScript, Postg
 ## Instalação
 
 ```bash
+cd backend
 npm install
+npm run start:dev
 ```
 
 ## Execução
