@@ -36,7 +36,7 @@ export class MoviesController {
   }
 
   @Put(':id')
-  update(@Param('id') id: string, @Body() movie: Partial<Movie>) {
+  update(@Param('id') id: string, @Body() movie: CreateMovieDto) {
     return this.moviesService.update(Number(id), movie);
   }
 
