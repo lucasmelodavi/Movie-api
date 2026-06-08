@@ -24,6 +24,12 @@ backend/
 * Filtro por título
 * Busca por gênero
 
+## Banco de Dados
+
+O projeto utiliza PostgreSQL com TypeORM.
+
+A opção synchronize: true está habilitada, portanto a tabela movies é criada automaticamente ao iniciar a aplicação.
+
 ## Instalação
 
 ```bash
