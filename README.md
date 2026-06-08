@@ -1,15 +1,55 @@
-Projeto de API para gerenciamento de filmes usando NestJS e PostgreSQL.
+# Progeto  MOvie API
 
-Uso Obrigatorio no Progeto
+API REST para gerenciamento de filmes desenvolvida com NestJS, TypeScript, PostgreSQL e TypeORM.
 
-- NestJS
-- TypeScript
-- PostgreSQL
-- TypeORM
+## Tecnologias utilizadas
 
-Como rodar
+* NestJS
+* TypeScript
+* PostgreSQL
+* TypeORM
+* Swagger
+
+## Funcionalidades
+
+* Cadastro de filmes
+* Listagem de filmes
+* Busca de filme por ID
+* Atualização de filmes
+* Exclusão de filmes
+* Filtro por título
+* Busca por gênero
+
+## Instalação
 
 ```bash
 npm install
+```
+
+## Execução
+
+```bash
 npm run start:dev
+```
+
+## Swagger
+
+Documentação da API:
+
+```text
+http://localhost:3000/api
+```
+
+## Variáveis de ambiente
+
+Criar um arquivo `.env` baseado no `.env.example`.
+
+Exemplo:
+
+```env
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=sua_senha
+DB_NAME=moviesdb
 ```
