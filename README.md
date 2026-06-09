@@ -35,7 +35,6 @@ A opção synchronize: true está habilitada, portanto a tabela movies é criada
 ```bash
 cd backend
 npm install
-npm run start:dev
 ```
 
 ## Execução
