@@ -1,4 +1,4 @@
-# Progeto  MOvie API
+# Progeto  Movie API
 
 API REST para gerenciamento de filmes desenvolvida com NestJS, TypeScript, PostgreSQL e TypeORM.
 
